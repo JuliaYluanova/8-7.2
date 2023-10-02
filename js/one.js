@@ -60,7 +60,7 @@ if ((phraseRandom === 1)) {
                         } else if (answerPhrase = (phraseRandom === 2)) {
                            answerPhrase = `Это число ${answerNumber }?`;
                         } else {
-                           answerPhrase = `Я знаю, что ты загадал ${answerNumber }! Да?`;
+                           answerPhrase = `Я знаю, ты загадал ${answerNumber }! Да?`;
                         }
 
                         answerField.innerText = answerPhrase;
@@ -90,7 +90,7 @@ document.querySelector('#btnRetry').addEventListener('click', function () {
                             } else if (answerPhrase = (phraseRandom === 2)) {
                             answerPhrase = ` Это число ${answerNumber }?`;
                             } else {
-                            answerPhrase = `Я знаю, что ты загадал ${answerNumber }! Да?`;
+                            answerPhrase = `Я знаю, ты загадал ${answerNumber }! Да?`;
                             }
 
                             answerField.innerText = answerPhrase;
@@ -104,11 +104,11 @@ document.querySelector('#btnOver').addEventListener('click', function () {
             let phraseRandom = Math.round(Math.random() * 3);
             let answerPhrase;
             if (phraseRandom === 1) {
-               answerPhrase = `Вы загадали неправильное число!\n\u{1F914}`;
+               answerPhrase = `Вы загадали неправильное число!`;
             } else if (answerPhrase = (phraseRandom === 2)) {
-                answerPhrase = `Я сдаюсь..\n\u{1F92F}`;
+                answerPhrase = `Я сдаюсь..`;
             } else {
-                answerPhrase = `Ну и задачка...\n\u{1F612}`;
+                answerPhrase = `Ну и задачка..`;
             }
         }    
 
@@ -127,7 +127,7 @@ document.querySelector('#btnOver').addEventListener('click', function () {
                         } else if (answerPhrase = (phraseRandom === 2)) {
                            answerPhrase = `Это число ${answerNumber }?`;
                         } else {
-                           answerPhrase = `Я знаю, что ты загадал ${answerNumber }! Да?`;
+                           answerPhrase = `Я знаю,  ты загадал ${answerNumber }! Да?`;
                         }
 
                         answerField.innerText = answerPhrase;
@@ -141,11 +141,11 @@ document.querySelector('#btnLess').addEventListener('click', function () {
             let phraseRandom = Math.round(Math.random() * 3);
             let answerPhrase;
             if (phraseRandom === 1) {
-               answerPhrase = `Вы загадали неправильное число!\n\u{1F914}`;
+               answerPhrase = `Вы загадали неправильное число!`;
             } else if (answerPhrase = (phraseRandom === 2)) {
-                answerPhrase = `Я сдаюсь..\n\u{1F92F}`;
+                answerPhrase = `Я сдаюсь..`;
             } else {
-                answerPhrase = `Ну и задачка...\n\u{1F612}`;
+                answerPhrase = `Ну и задачка...`;
             }
         }  
 
@@ -163,7 +163,7 @@ document.querySelector('#btnLess').addEventListener('click', function () {
                         } else if (answerPhrase = (phraseRandom === 2)) {
                            answerPhrase = ` Это число ${answerNumber }?`;
                         } else {
-                           answerPhrase = ` Я знаю, что ты загадал ${answerNumber }! Да?`;
+                           answerPhrase = ` Я знаю, ты загадал ${answerNumber }! Да?`;
                         }
 
                         answerField.innerText = answerPhrase;
@@ -176,11 +176,11 @@ document.querySelector('#btnEqual').addEventListener('click', function () {
         let phraseRandom = Math.round(Math.random() * 3);
         let answerPhrase;
         if (phraseRandom === 1) {
-                answerPhrase = `Я всегда угадываю\n\u{1F44C}`;
+                answerPhrase = `Я всегда угадываю`;
             } else if (answerPhrase = (phraseRandom === 2)) {
-                answerPhrase = `Мастер в здании\n\u{1F60E}`;
+                answerPhrase = `Профи`;
             } else {
-                answerPhrase = `Я справился, а ты бы смог?\n\u{1F525}`;
+                answerPhrase = `Я справился?`;
             }
         answerField.innerText = answerPhrase;
         gameRun = false;

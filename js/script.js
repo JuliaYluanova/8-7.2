@@ -2,11 +2,11 @@
 // Вводные данные
 let minValue = parseInt(prompt('Минимальное знание числа для игры', '-999'));
 let maxValue = parseInt(prompt('Максимальное знание числа для игры','999'));
-minValue < -999 ? minValue = -999 : minValue;
+minValue < -999 ? minValue = -1000 : minValue;
 maxValue > 999 ? maxValue = 1000 : maxValue;
 
 // Запуск игры
-alert(`Загадайте любое целое число от ${minValue} до ${maxValue}, а я его угадаю`);
+alert(`Загадайте любое целое число от ${minValue} до ${maxValue}, я его угадаю`);
 let answerNumber  = Math.floor((minValue + maxValue) / 2); 
 let orderNumber = 1; 
 let gameRun = true; 
@@ -22,9 +22,9 @@ let answerPhrase;
 if ((phraseRandom === 1)) {
                            answerPhrase = `Вы загадали число ${answerNumber }?`;
                         } else if (answerPhrase = (phraseRandom === 2)) {
-                           answerPhrase = `Пфффф, проще простого! Это число ${answerNumber }?`;
+                           answerPhrase = `Это число ${answerNumber }?`;
                         } else {
-                           answerPhrase = `Сейчас обалдеешь. Я знаю, что ты загадал ${answerNumber }! Да?`;
+                           answerPhrase = `Я знаю, ты загадал ${answerNumber }! Да?`;
                         }
 
 answerField.innerText = answerPhrase;
@@ -57,11 +57,9 @@ document.querySelector('#btnRetry').addEventListener('click', function () {
     if ((phraseRandom === 1)) {
                             answerPhrase = `Вы загадали число ${answerNumber }?`;
                             } else if (answerPhrase = (phraseRandom === 2)) {
-                            answerPhrase = `Пфффф, проще простого! Это число ${answerNumber }?`;
+                            answerPhrase = `Это число ${answerNumber }?`;
                             } else {
-                            answerPhrase = `Сейчас обалдеешь. Я знаю, что ты загадал ${answerNumber }! Да?`;
-                            }
-
+                            answerPhrase = `Я знаю, ты загадал ${answerNumber }! Да?`; }
                             answerField.innerText = answerPhrase;
 })
 
@@ -92,49 +90,49 @@ document.querySelector('#btnOver').addEventListener('click', function () {
             if ((phraseRandom === 1)) {
                            answerPhrase = `Вы загадали число ${answerNumber }?`;
                         } else if (answerPhrase = (phraseRandom === 2)) {
-                           answerPhrase = `Пфффф, проще простого! Это число ${answerNumber }?`;
+                           answerPhrase = `Это число ${answerNumber }?`;
                         } else {
-                           answerPhrase = `Сейчас обалдеешь. Я знаю, что ты загадал ${answerNumber }! Да?`;
+                           answerPhrase = `Я знаю, ты загадал ${answerNumber }! Да?`;
                         }
 
                         answerField.innerText = answerPhrase;
                     }
-            
 })
 
 // Кнопка "меньше"
 document.querySelector('#btnLess').addEventListener('click', function () {
     if (gameRun){
-        if (maxValue === minValue) {
-            const phraseRandom = Math.round(Math.random() * 3);
+        if (minValue === maxValue)
+        {
+            let phraseRandom = Math.round(Math.random() * 3);
             let answerPhrase;
             if (phraseRandom === 1) {
-               answerPhrase = `Вы загадали неверно!`;
+               answerPhrase = `Вы загадали неправильное число!`;
             } else if (answerPhrase = (phraseRandom === 2)) {
-                answerPhrase = `Увы.. `;
+                answerPhrase = `Я сдаюсь..`;
             } else {
-                answerPhrase =`Сдаюсь..`;
-            } 
+                answerPhrase = `Ну и задачка...`;
+            }
+        }  
             answerField.innerText = answerPhrase;
             gameRun = false;
         } else {
-            maxValue = answerNumber; 
+            maxValue = answerNumber - 1; 
             answerNumber  = Math.floor((maxValue + minValue) / 2);
             orderNumber++; 
-            orderNumberField.innerText = orderNumber;  
-
+            orderNumberField.innerText = orderNumber; 
             let phraseRandom = Math.round(Math.random() * 3);
             let answerPhrase;
             if ((phraseRandom === 1)) {
-                           answerPhrase = `Вы загадали .. ${answerNumber }?`;
+                           answerPhrase = `Вы загадали число ${answerNumber }?`;
                         } else if (answerPhrase = (phraseRandom === 2)) {
                            answerPhrase = `Это число ${answerNumber }?`;
                         } else {
-                           answerPhrase = `Вы загадали число ${answerNumber }?`;
+                           answerPhrase = `Я знаю, ты загадал ${answerNumber }! Да?`;
                         }
 
                         answerField.innerText = answerPhrase;
-                    }}
+                    }
 })
 
 // Кнопка "верно"
@@ -143,18 +141,16 @@ document.querySelector('#btnEqual').addEventListener('click', function () {
         const phraseRandom = Math.round( Math.random() * 2);
         switch (phraseRandom) {
             case 0:
-                answertext = `Опять угадали\n\u{1F44C}`;
+                answertext = `Я всегда угадываю`;
                 break;
             case 1:
-                answertext = `Я профи\n\u{1F60E}`;
+                answertext = `Профи`;
             break;
             case 2:
-                answertext = `Как игра?\n\u{1F525}`;
+                answertext = `Я справился?`;
             break;
         }
         answerField.innerText = answertext;
         gameRun = false;
     }
 })
-
-
